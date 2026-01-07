@@ -1,0 +1,12 @@
+{
+  "about": {
+    "some": "Something else is written, but in the \"About\" section",
+    "title": "This is a platform for learning everything that our teachers have gathered."
+  },
+  "home": {
+    "some": "Something else is written",
+    "title": "Hello, World!",
+    "some2": "one more thing or two",
+    "button": "Click me"
+  }
+}
