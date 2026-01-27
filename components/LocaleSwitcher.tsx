@@ -2,6 +2,14 @@
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { routing } from "@/i18n/routing";
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
@@ -16,9 +24,17 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <select value={locale} onChange={(e) => switchLocale(e.target.value)}>
-      <option value="uk">UK</option>
-      <option value="en">EN</option>
-    </select>
+    <Select value={locale} onValueChange={switchLocale}>
+      <SelectTrigger className="uppercase">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        {routing.locales.map((loc) => (
+          <SelectItem key={loc} value={loc} className="uppercase">
+            {loc}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }

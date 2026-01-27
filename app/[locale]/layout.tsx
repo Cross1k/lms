@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Montserrat, Mulish } from "next/font/google";
 import "../globals.css";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
@@ -6,6 +7,20 @@ import { routing } from "@/i18n/routing";
 import LocaleSwitcher from "../../components/LocaleSwitcher";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ModeToggle } from "@/components/ThemeToggle";
+
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const mulish = Mulish({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +40,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang="uk">
+    <html lang={locale} className={`${montserrat.variable} ${mulish.variable}`}>
       <body>
         <NextIntlClientProvider>
           <ThemeProvider
@@ -34,9 +49,11 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <div className="absolute top-4 right-4 flex gap-2">
+              <LocaleSwitcher />
+              <ModeToggle />
+            </div>
             {children}
-            <LocaleSwitcher />
-            <ModeToggle />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

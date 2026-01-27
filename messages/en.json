@@ -1,12 +1,52 @@
 {
-  "about": {
-    "some": "Something else is written, but in the \"About\" section",
-    "title": "This is a platform for learning everything that our teachers have gathered."
-  },
-  "home": {
-    "some": "Something else is written",
-    "title": "Hello, World!",
-    "some2": "one more thing or two",
-    "button": "Click me"
+  "Home": {
+    "hero": {
+      "title": "Learning with a system",
+      "subtitle": "Studyroom is an LMS for structured learning where progress is visible, materials are organized, and students don’t get lost in chaos.",
+      "ctaPrimary": "Start learning",
+      "ctaSecondary": "Sign in"
+    },
+    "features": {
+      "title": "Why Studyroom",
+      "items": [
+        {
+          "title": "Structure",
+          "text": "Courses, lessons, and materials are organized so students always know what to do next."
+        },
+        {
+          "title": "Progress",
+          "text": "Track completed tasks and real learning momentum, not just content views."
+        },
+        {
+          "title": "Focus",
+          "text": "Nothing extra: only what supports learning, not what distracts from it."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Enroll",
+          "text": "Students get access to a course with clear structure and deadlines."
+        },
+        {
+          "number": "02",
+          "title": "Learn",
+          "text": "Lessons, materials, and tasks unlock step by step."
+        },
+        {
+          "number": "03",
+          "title": "Results",
+          "text": "Progress is tracked, and learning stops being chaotic."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Ready to learn with a system?",
+      "subtitle": "Start your first course today.",
+      "button": "Create an account"
+    }
   }
 }
