@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 type FeatureItem = { title: string; text: string };
 type StepItem = { number: string; title: string; text: string };
@@ -11,7 +12,6 @@ export default async function HomePage() {
 
   return (
     <main className="flex flex-col">
-      {/* HERO */}
       <section className="py-24">
         <div className="mx-auto max-w-4xl px-6 text-center space-y-6">
           <h1 className="text-[clamp(2.5rem,4vw,3.5rem)] leading-tight">
@@ -23,21 +23,20 @@ export default async function HomePage() {
           </p>
 
           <div className="flex items-center justify-center gap-3 pt-4">
-            <a
-              href="/"
+            <Link
+              href="/registration"
               className="rounded-lg bg-primary px-6 py-3 text-primary-foreground"
             >
               {t("hero.ctaPrimary")}
-            </a>
+            </Link>
 
-            <a href="/" className="rounded-lg border px-6 py-3">
+            <Link href="/login" className="rounded-lg border px-6 py-3">
               {t("hero.ctaSecondary")}
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* VALUE PROPS */}
       <section className="border-t py-20">
         <div className="mx-auto max-w-5xl px-6 space-y-10">
           <h2 className="text-center text-3xl">{t("features.title")}</h2>
@@ -50,7 +49,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
       <section className="bg-muted/40 py-20">
         <div className="mx-auto max-w-5xl px-6 space-y-12">
           <h2 className="text-center text-3xl">{t("howItWorks.title")}</h2>
@@ -68,19 +66,18 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
       <section className="py-24">
         <div className="mx-auto max-w-3xl px-6 text-center space-y-6">
           <h2 className="text-3xl">{t("finalCta.title")}</h2>
 
           <p className="text-muted-foreground">{t("finalCta.subtitle")}</p>
 
-          <a
+          <Link
             href="/"
             className="inline-flex rounded-lg bg-primary px-8 py-4 text-primary-foreground"
           >
             {t("finalCta.button")}
-          </a>
+          </Link>
         </div>
       </section>
     </main>
