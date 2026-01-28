@@ -73,7 +73,7 @@ export default async function HomePage() {
           <p className="text-muted-foreground">{t("finalCta.subtitle")}</p>
 
           <Link
-            href="/"
+            href="/registration"
             className="inline-flex rounded-lg bg-primary px-8 py-4 text-primary-foreground"
           >
             {t("finalCta.button")}
