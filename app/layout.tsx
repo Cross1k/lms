@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Mulish } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/common/ThemeProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -34,7 +34,7 @@ export default function RootLayout({
       className={`${montserrat.variable} ${mulish.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body className="flex flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

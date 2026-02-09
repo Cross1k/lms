@@ -1,5 +1,5 @@
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import { ModeToggle } from "@/components/ThemeToggle";
+import LocaleSwitcher from "@/components/common/LocaleSwitcher";
+import { ModeToggle } from "@/components/common/ThemeToggle";
 
 export default async function RootLayout({
   children,
